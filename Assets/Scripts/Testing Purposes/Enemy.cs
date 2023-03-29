@@ -5,11 +5,14 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    private Transform playerTransform;
-    private Vector3 targetDir;
-    public NavMeshAgent nav;
+    public float minCaptureDistance;
 
+    private Transform playerTransform;
+
+    public NavMeshAgent nav;
     public EnemyNavMesh enemyNavMesh;
+    [SerializeField] private CharacterController characterController;
+    [SerializeField] private GameObject teleport;
 
     void Start()
     {
@@ -26,6 +29,17 @@ public class Enemy : MonoBehaviour
             {
                 enemyNavMesh.isPatrolling = true;
                 enemyNavMesh.isChasingPlayer = false;
+            }
+
+            if(Vector3.Distance(transform.position, playerTransform.position) <= minCaptureDistance)
+            {
+                // Disable the cc
+                characterController.enabled = false;
+                // Move the cc
+                Debug.Log("Player teleported");
+                playerTransform.position = teleport.transform.position;
+                // Enabled the cc
+                characterController.enabled = true;
             }
         }
     }

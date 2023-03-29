@@ -10,10 +10,10 @@ public class EnemyNavMesh : MonoBehaviour
     public float range = 10f;
     public NavMeshAgent agent;
 
-    private Transform[] points;
-    private int currentWaypoint = 1;
+    public Transform[] points;
+    public int currentWaypoint = 1;
     private float onMeshThreshold = 3;
-    private Transform playerTransform;
+    public Transform playerTransform;
 
     public bool isPatrolling;
     public bool isChasingPlayer;
@@ -79,7 +79,7 @@ public class EnemyNavMesh : MonoBehaviour
             if (distance < waypointDistance)
             {
                 // Switch to next waypoint
-                currentWaypoint++;
+                currentWaypoint = Random.Range(1, points.Length);
             }
             if(playerDistance <= range)
             {
