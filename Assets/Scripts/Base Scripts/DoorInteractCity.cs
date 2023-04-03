@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorInteract : MonoBehaviour
+public class DoorInteractCity : MonoBehaviour
 {
     public bool inDoorRange = false;
 
     void Start()
     {
-        
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -28,7 +28,7 @@ public class DoorInteract : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Scene activeScene = SceneManager.GetActiveScene();
-                SceneManager.LoadScene(activeScene.buildIndex + 1);
+                SceneManager.LoadScene(activeScene.buildIndex - 1);
             }
         }
     }
