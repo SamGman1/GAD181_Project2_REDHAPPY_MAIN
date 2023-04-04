@@ -13,7 +13,7 @@ namespace MainScene
         public float redHappy = 0f;
 
        
-        public float sellBaseYield = 62.80f;
+        public float sellBaseYield = 102.80f;
         public float juiceBaseYield = 0.7f;
         public float happyBaseYield = 0.4f;
 

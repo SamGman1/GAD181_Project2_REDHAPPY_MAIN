@@ -20,7 +20,6 @@ namespace MainScene
         public float redHappy = 0f;
         public TMP_Text redHappyText;
 
-        public GameObject letter;
 
         // Start is called before the first frame update
         void Start()
@@ -43,18 +42,11 @@ namespace MainScene
             redHappy = statsTracker.redHappy;
             redHappyText.SetText(redHappy.ToString("#0.00") + "L");
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                LetterExit();
-            }
+            
             
         }
 
-        public void LetterExit()
-        {
-            letter.SetActive(false);
-            
-        }
+        
 
     }
 }
