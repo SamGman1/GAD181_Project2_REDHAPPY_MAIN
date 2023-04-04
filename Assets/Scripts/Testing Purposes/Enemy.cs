@@ -3,43 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+namespace MainScene
 {
-    public float minCaptureDistance;
 
-    private Transform playerTransform;
-
-    public NavMeshAgent nav;
-    public EnemyNavMesh enemyNavMesh;
-    [SerializeField] private CharacterController characterController;
-    [SerializeField] private GameObject teleport;
-
-    void Start()
+    public class Enemy : MonoBehaviour
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+        public float minCaptureDistance;
+        public StatsTracker statstracker;
 
-    void Update()
-    {
-        if (enemyNavMesh.isChasingPlayer == true)
+        private Transform playerTransform;
+
+        public NavMeshAgent nav;
+        public EnemyNavMesh enemyNavMesh;
+        [SerializeField] private CharacterController characterController;
+        [SerializeField] private GameObject teleport;
+
+        void Start()
         {
-            float playerDistance = Vector3.Distance(transform.position, playerTransform.position);
-            nav.SetDestination(playerTransform.position);
-            if (playerDistance >= enemyNavMesh.range)
-            {
-                enemyNavMesh.isPatrolling = true;
-                enemyNavMesh.isChasingPlayer = false;
-            }
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        }
 
-            if(Vector3.Distance(transform.position, playerTransform.position) <= minCaptureDistance)
+        void Update()
+        {
+            if (enemyNavMesh.isChasingPlayer == true)
             {
-                // Disable the cc
-                characterController.enabled = false;
-                // Move the cc
-                Debug.Log("Player teleported");
-                playerTransform.position = teleport.transform.position;
-                // Enabled the cc
-                characterController.enabled = true;
+                float playerDistance = Vector3.Distance(transform.position, playerTransform.position);
+                nav.SetDestination(playerTransform.position);
+                if (playerDistance >= enemyNavMesh.range)
+                {
+                    enemyNavMesh.isPatrolling = true;
+                    enemyNavMesh.isChasingPlayer = false;
+                }
+
+                if (Vector3.Distance(transform.position, playerTransform.position) <= minCaptureDistance)
+                {
+                    // Disable the cc
+                    characterController.enabled = false;
+                    // Move the cc
+                    Debug.Log("Player teleported");
+                    playerTransform.position = teleport.transform.position;
+                    StatsTracker.redHappy = 0f;
+                    // Enabled the cc
+                    characterController.enabled = true;
+                }
             }
         }
     }

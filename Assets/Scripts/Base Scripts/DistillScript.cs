@@ -38,10 +38,10 @@ namespace MainScene
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (statsTracker.redJuice >= 1f)
+                    if (StatsTracker.redJuice >= 1f)
                     {
-                        statsTracker.redJuice -= statsTracker.juiceDistillNumber;
-                        statsTracker.redHappy += statsTracker.happySellNumber*(statsTracker.happyBaseYield*statsTracker.happyMultiplier);
+                        StatsTracker.redJuice -= StatsTracker.juiceDistillNumber;
+                        StatsTracker.redHappy += StatsTracker.happySellNumber*(StatsTracker.happyBaseYield*StatsTracker.happyMultiplier);
                         Debug.Log("TESTING");
                         distillSound.PlayOneShot(Distill);
                     }

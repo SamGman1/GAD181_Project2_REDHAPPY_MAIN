@@ -15,7 +15,7 @@ namespace MainScene
         public StatsTracker statsTracker;
         private bool inBuyZone = false;
 
-        private bool inLaptop = false;
+        public bool inLaptop = false;
         
 
 
@@ -67,26 +67,26 @@ namespace MainScene
 
         public void GetRedBerries()
         {
-            if (statsTracker.playerMoney < 10f)
+            if (StatsTracker.playerMoney < 10f)
             {
                 Debug.Log("You don't have enough money!");
             }
             else
             {
-                statsTracker.playerMoney -= 10f;
-                statsTracker.redBerries += 1;
+                StatsTracker.playerMoney -= 10f;
+                StatsTracker.redBerries += 1;
             }
         }
         public void SellRedBerries()
         {
-            if (statsTracker.redBerries < 1)
+            if (StatsTracker.redBerries < 1)
             {
                 Debug.Log("You don't have enough Red Berries!");
             }
             else
             {
-                statsTracker.playerMoney += 7f;
-                statsTracker.redBerries -= 1;
+                StatsTracker.playerMoney += 7f;
+                StatsTracker.redBerries -= 1;
             }
         }
 

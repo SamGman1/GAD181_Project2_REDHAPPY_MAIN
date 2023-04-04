@@ -37,19 +37,19 @@ namespace MainScene
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (statsTracker.redBerries >= 1)
+                    if (StatsTracker.redBerries >= 1)
                     {
-                        if (statsTracker.berryCrushNumber > statsTracker.redBerries)
+                        if (StatsTracker.berryCrushNumber > StatsTracker.redBerries)
                         {
-                            statsTracker.redBerries -= 1;
-                            statsTracker.redJuice += 1 * (statsTracker.juiceBaseYield * statsTracker.juiceMultiplier);
+                            StatsTracker.redBerries -= 1;
+                            StatsTracker.redJuice += 1 * (StatsTracker.juiceBaseYield * StatsTracker.juiceMultiplier);
                             Debug.Log("TESTING");
                             crushSound.PlayOneShot(Crush);
                         }
                         else
                         {
-                            statsTracker.redBerries -= statsTracker.berryCrushNumber;
-                            statsTracker.redJuice += statsTracker.berryCrushNumber * (statsTracker.juiceBaseYield * statsTracker.juiceMultiplier);
+                            StatsTracker.redBerries -= StatsTracker.berryCrushNumber;
+                            StatsTracker.redJuice += StatsTracker.berryCrushNumber * (StatsTracker.juiceBaseYield * StatsTracker.juiceMultiplier);
                             Debug.Log("TESTING");
                             crushSound.PlayOneShot(Crush);
                         }

@@ -29,10 +29,10 @@ namespace MainScene
         public void StrongHands()
         {
             //Extra 20% of Juice from crushing.
-            if (statsTracker.playerMoney >= 500)
+            if (StatsTracker.playerMoney >= 500)
             {
-                statsTracker.juiceMultiplier += 0.2f;
-                statsTracker.playerMoney -= 500;
+                StatsTracker.juiceMultiplier += 0.2f;
+                StatsTracker.playerMoney -= 500;
                 strongHandsPrice.SetText("PURCHASED");
                 strongHandsButton.SetActive(false);
             }
@@ -41,10 +41,10 @@ namespace MainScene
         public void LargerMortar()
         {
             //Extra 20% of Juice from crushing.
-            if (statsTracker.playerMoney >= 700)
+            if (StatsTracker.playerMoney >= 700)
             {
-                statsTracker.berryCrushNumber *= 2;
-                statsTracker.playerMoney -= 700;
+                StatsTracker.berryCrushNumber *= 2;
+                StatsTracker.playerMoney -= 700;
                 largerMortarPrice.SetText("PURCHASED");
                 largerMortarButton.SetActive(false);
             }
@@ -52,10 +52,10 @@ namespace MainScene
 
         public void HigherConcentration()
         {
-            if (statsTracker.playerMoney >= 750)
+            if (StatsTracker.playerMoney >= 750)
             {
-                statsTracker.happyMultiplier += 0.1f;
-                statsTracker.playerMoney -= 700;
+                StatsTracker.happyMultiplier += 0.1f;
+                StatsTracker.playerMoney -= 700;
                 higherConcentrationPrice.SetText("PURCHASED");
                 higherConcentrationButton.SetActive(false);
             }

@@ -9,6 +9,7 @@ namespace MainScene
     {
 
         public GameObject sellText;
+        public bool firstSell = false;
 
         public StatsTracker statsTracker;
         private bool inSellZone = false;
@@ -33,10 +34,11 @@ namespace MainScene
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (statsTracker.redHappy >= 1f)
+                    if (StatsTracker.redHappy >= 1f)
                     {
-                        statsTracker.redHappy -= statsTracker.happySellNumber;
-                        statsTracker.playerMoney += statsTracker.happySellNumber*(statsTracker.sellBaseYield*statsTracker.moneyMultiplier);
+                        firstSell = true;
+                        StatsTracker.redHappy -= StatsTracker.happySellNumber;
+                        StatsTracker.playerMoney += StatsTracker.happySellNumber*(StatsTracker.sellBaseYield*StatsTracker.moneyMultiplier);
                         Debug.Log("TESTING");
                         sellSound.PlayOneShot(Sell);
                     }

@@ -7,6 +7,8 @@ namespace MainScene
 {
     public class UIScript : MonoBehaviour
     {
+        
+
         public StatsTracker statsTracker;
         public float playerMoney = 0f;
         public TMP_Text playerMoneyText;
@@ -24,22 +26,22 @@ namespace MainScene
         // Start is called before the first frame update
         void Start()
         {
-            
+           
         }
 
         // Update is called once per frame
         void Update()
         {
-            playerMoney = statsTracker.playerMoney;
+            playerMoney = StatsTracker.playerMoney;
             playerMoneyText.SetText(""+ playerMoney.ToString("#0.00"));
 
-            redBerries = statsTracker.redBerries;
+            redBerries = StatsTracker.redBerries;
             redBerriesText.SetText("" + redBerries);
 
-            redJuice = statsTracker.redJuice;
+            redJuice = StatsTracker.redJuice;
             redJuiceText.SetText(redJuice.ToString("#0.00") + "L");
 
-            redHappy = statsTracker.redHappy;
+            redHappy = StatsTracker.redHappy;
             redHappyText.SetText(redHappy.ToString("#0.00") + "L");
 
             

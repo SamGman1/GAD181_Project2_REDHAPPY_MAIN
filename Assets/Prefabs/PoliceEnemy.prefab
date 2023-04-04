@@ -135,8 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460ffbf1703478046a75d76c0c1cd000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minCaptureDistance: 0
+  statstracker: {fileID: 0}
   nav: {fileID: 910921226011519627}
   enemyNavMesh: {fileID: 910921226011519624}
+  characterController: {fileID: 0}
+  teleport: {fileID: 0}
 --- !u!114 &910921226011519624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,5 +165,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentWaypoint: 1
+  playerTransform: {fileID: 0}
   isPatrolling: 1
   isChasingPlayer: 0

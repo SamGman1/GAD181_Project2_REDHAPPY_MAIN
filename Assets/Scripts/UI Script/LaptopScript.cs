@@ -18,6 +18,9 @@ namespace MainScene
         public float playerMoney = 0f;
         public TMP_Text playerMoneyText;
 
+        public bool inLaptop = false;
+        public bool inStore = false;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -27,12 +30,13 @@ namespace MainScene
         // Update is called once per frame
         void Update()
         {
-            playerMoney = statsTracker.playerMoney;
+            playerMoney = StatsTracker.playerMoney;
             playerMoneyText.SetText("$" + playerMoney);
         }
 
         public void Store()
         {
+            inStore = true;
             emailScreen.SetActive(false);
             upgradeScreen.SetActive(false);
             automationScreen.SetActive(false);

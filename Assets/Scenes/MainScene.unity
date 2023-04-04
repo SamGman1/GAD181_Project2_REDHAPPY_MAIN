@@ -218,6 +218,7 @@ MonoBehaviour:
   berryText: {fileID: 0}
   laptopMenu: {fileID: 601127543}
   statsTracker: {fileID: 987224510}
+  inLaptop: 0
 --- !u!1 &80085924
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +731,18 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 224814187210564618, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: buyScript
+      value: 
+      objectReference: {fileID: 1748627403}
+    - target: {fileID: 224814187210564618, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: laptopScript
+      value: 
+      objectReference: {fileID: 601127548}
+    - target: {fileID: 224814187210564618, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: statsTracker
+      value: 
+      objectReference: {fileID: 987224510}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
@@ -2046,6 +2059,8 @@ MonoBehaviour:
   automationScreen: {fileID: 1997489771}
   playerMoney: 0
   playerMoneyText: {fileID: 1637322829}
+  inLaptop: 0
+  inStore: 0
 --- !u!1 &628910083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,107 +2828,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717537933}
   m_CullTransparentMesh: 1
---- !u!1 &762181849 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-  m_PrefabInstance: {fileID: 295529299}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &762181857
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762181849}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &788216399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,19 +3191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076cf046bef66dd42a6f62866e7c6791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoney: 0
-  redBerries: 0
-  redJuice: 0
-  redHappy: 0
-  sellBaseYield: 62.8
-  juiceBaseYield: 0.7
-  happyBaseYield: 0.4
-  berryCrushNumber: 1
-  juiceDistillNumber: 1
-  happySellNumber: 1
-  moneyMultiplier: 0
-  juiceMultiplier: 0
-  happyMultiplier: 0
 --- !u!4 &987224511
 Transform:
   m_ObjectHideFlags: 0
@@ -5845,8 +5746,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748627398}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.542, y: 0.6935, z: 6.2234}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.5420003, y: 0.6935, z: 6.223402}
   m_LocalScale: {x: 0.6739, y: 1.5589, z: 2.664925}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5868,6 +5769,7 @@ MonoBehaviour:
   berryText: {fileID: 1392226100}
   laptopMenu: {fileID: 601127543}
   statsTracker: {fileID: 987224510}
+  inLaptop: 0
 --- !u!1 &1774823714
 GameObject:
   m_ObjectHideFlags: 0
@@ -6874,7 +6776,6 @@ GameObject:
   - component: {fileID: 2065915994}
   - component: {fileID: 2065915993}
   - component: {fileID: 2065915998}
-  - component: {fileID: 2065915992}
   - component: {fileID: 2065915997}
   m_Layer: 0
   m_Name: DoorTrigger
@@ -6883,22 +6784,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2065915992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065915991}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5121f4d4bdbc40f4da404a325f112aa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sellText: {fileID: 1728218542}
-  statsTracker: {fileID: 987224510}
-  sellSound: {fileID: 2065915997}
-  Sell: {fileID: 8300000, guid: b9b3dbcd3e358584c8f13fc82efaef2f, type: 3}
 --- !u!65 &2065915993
 BoxCollider:
   m_ObjectHideFlags: 0
